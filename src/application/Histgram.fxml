@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -8,12 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="426.0" prefWidth="532.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="application.HistgramController">
+<AnchorPane prefHeight="426.0" prefWidth="532.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HistgramController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="531.0">
         <items>
-            <Label prefHeight="27.0" prefWidth="130.0" text="class value: Min">
+            <Label prefHeight="27.0" prefWidth="46.0" text="Min">
                <font>
                   <Font size="18.0" />
                </font>
@@ -31,15 +31,17 @@
                </font>
             </Label>
             <TextField fx:id="widthField" layoutX="253.0" layoutY="13.0" prefHeight="25.0" prefWidth="62.0" />
+            <ChoiceBox fx:id="seperateChoice" prefWidth="150.0">
+            </ChoiceBox>
+        </items>
+      </ToolBar>
+      <TextArea fx:id="dataArea" layoutY="40.0" prefHeight="138.0" prefWidth="531.0" promptText="Paste data csv below" />
+      <ToolBar layoutY="178.0" prefHeight="40.0" prefWidth="531.0">
+        <items>
+          <Button fx:id="ExecBtn" mnemonicParsing="false" onAction="#execAction" text="Excec..." />
           <Button fx:id="QuitBtn" mnemonicParsing="false" onAction="#quitAction" text="Quit" />
         </items>
       </ToolBar>
-      <TextArea layoutY="40.0" prefHeight="138.0" prefWidth="531.0" promptText="Paste data csv below" />
-      <ToolBar layoutY="178.0" prefHeight="40.0" prefWidth="531.0">
-        <items>
-          <Button fx:id="execBtn" mnemonicParsing="false" onAction="#execAction" text="Excec..." />
-        </items>
-      </ToolBar>
-      <TextArea layoutY="218.0" prefHeight="200.0" prefWidth="531.0" />
+      <TextArea fx:id="histArea" layoutY="218.0" prefHeight="200.0" prefWidth="531.0" />
    </children>
 </AnchorPane>
